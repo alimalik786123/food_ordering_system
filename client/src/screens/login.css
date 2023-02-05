@@ -1,0 +1,14 @@
+.login{
+    margin-top: 5%;
+    margin-right:8%;
+    margin-left: 8%;
+    padding: 3%;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    background-color: white;
+    
+}
+body{
+    background-color: rgb(209, 209, 209);
+}
