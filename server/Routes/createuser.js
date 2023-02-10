@@ -5,6 +5,8 @@ var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const { body, validationResult } = require('express-validator')
+const jwt=require('jsonwebtoken')
+const secret="mynameisalimalikmynameisalimalik"
 
 Router.post("/user", jsonParser,
     [body('email').isEmail(),
@@ -41,10 +43,17 @@ body('password').isLength({ min: 5 })], async (req, res) => {
         if (!userdata) {
             return res.status(404).json({ errors: "wrong email" })
         }
+
         else if (req.body.password !== userdata.password) {
             return res.status(400).json({ errors: "wrong password" })
         }
-        return res.json({ success: true })
+        const data={
+            user:{
+                id:userdata.id
+            }
+        }
+        const token=jwt.sign(data,secret)
+        return res.json({ success: true,token:token })
     
    
 })

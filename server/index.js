@@ -1,6 +1,7 @@
 const express = require('express');
 const mongo = require('./database/conn');
 const router=require("./Routes/createuser")
+const display=require("./Routes/display")
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -16,6 +17,7 @@ app.get('/', jsonParser,(req, res) => {
   res.send('Hello World!');
 });
 app.use("/",router)
+app.use("/",display)
 
 app.listen(8080, () =>
   console.log('listening'),

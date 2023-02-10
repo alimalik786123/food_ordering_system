@@ -19,6 +19,7 @@ export default function Login() {
         const resp=await response.json()
         console.log(resp);
         if(resp.success){
+          localStorage.setItem("token",resp.token)
           redirect1("/")
         }
         else if(!resp.success){
