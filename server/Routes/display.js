@@ -8,7 +8,7 @@ const { body, validationResult } = require('express-validator')
 Router.post('/foodData',(req,res)=>{
     try {
         console.log(global.data);
-        res.send([global.data])
+        res.send([global.data,global.category])
     } catch (error) {
         
     }

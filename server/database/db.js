@@ -5,11 +5,25 @@ const mongodb=async()=>{
     await mongoose.connect(datab,{useNewUrlParser:true}, async (err,result) => {
         console.log("connected");
         const data1 = await mongoose.connection.db.collection("foods")
-        data1.find({}).toArray((err,res)=>{
-           global.data=res
-           console.log(global.users);
+        const data2 = await mongoose.connection.db.collection("users")
+        const category = await mongoose.connection.db.collection("category")
+
+
+        data1.find({}).toArray(async (err,res)=>{
+           
+           category.find({}).toArray((err,cat)=>{
+            global.data=res
+            global.category=cat
+            console.log(cat);
+           })
+
+        //   console.log(global.data);
         });
+        data2.find({}).toArray((err,res1)=>{
+            // console.log(res1);
+         });
+         console.log(global.name);
        
     })}
 // mongo()
-module.exports=mongodb()
+module.exports=mongodb
