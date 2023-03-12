@@ -14,7 +14,7 @@ const mongodb=async()=>{
            category.find({}).toArray((err,cat)=>{
             global.data=res
             global.category=cat
-            console.log(cat);
+            
            })
 
         //   console.log(global.data);
