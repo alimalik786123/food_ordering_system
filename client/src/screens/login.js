@@ -19,8 +19,9 @@ export default function Login() {
         const resp=await response.json()
         console.log(resp);
         if(resp.success){
-          localStorage.setItem("token",resp.token)
-          redirect1("/")
+          window.localStorage.setItem("token",resp.token)
+          console.log(window.localStorage.getItem("token"));
+           redirect1("/")
         }
         else if(!resp.success){
             alert("Enter valid details")

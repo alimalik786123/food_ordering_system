@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import {Link, useNavigate} from "react-router-dom"
 const Navbar=()=>{
   const navigate=useNavigate()
-  const logout1=()=>{
+  const logout=()=>{
         localStorage.removeItem("token")
         navigate('/login')
   }
@@ -18,18 +18,27 @@ const Navbar=()=>{
       <ul class="navbar-nav me-auto me-auto mb-2 mb-lg-0">
        
         <li class="nav-item">
-          <Link class="nav-link active fs-5" aria-current="page" to="/">Home</Link>
-        </li>
-        {(localStorage.getItem("token"))?
-         <li class="nav-item">
-            
-        <Link class="nav-link active fs-5" aria-current="page" to="/">my orders</Link>
-        <div className="btn btn-success mx-1">Cart</div><button className="btn btn-success mx-1" onClick={logout1()}>logout</button>
-       </li>:<><div><h1>nothing</h1></div></>  
-      }
+          <Link class="nav-link active fs-5" aria-current="page" to="/">Home</Link></li>
+         { localStorage.getItem("token")?
+        <div>
+        <Link class="nav-link active fs-5" aria-current="page" to="/">my orders</Link></div>:<></>}
+        
+      
         
         </ul>
+        {
+       
+        localStorage.getItem("token")?
+        <div>
         
+        <div className="btn btn-success mx-1">Cart</div><div className="btn btn-success mx-1" onClick={logout}>logout</div></div>
+        :
+        <div className="d-flex">
+         <Link class="btn bg-white mx-1" to="/login">Login</Link>
+          <Link class="btn bg-white mx-1" to='/signup'  >signup</Link>
+        </div>
+       
+        }
     </div>
   </div>
 </nav>
