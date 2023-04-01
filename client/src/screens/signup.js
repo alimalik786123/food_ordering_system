@@ -7,6 +7,7 @@ export default function Signup() {
     let redirect=useNavigate()
     const setfun=(e)=>{
         setdata({...data,[e.target.name]:e.target.value})
+        console.log(data);
     }
     const submit=async(e)=>{
         e.preventDefault()
@@ -56,3 +57,4 @@ export default function Signup() {
   )
     
 }
+

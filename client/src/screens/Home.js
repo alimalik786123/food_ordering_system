@@ -63,7 +63,7 @@ const Home=()=>{
             
                 data2.Category===data1.category && data2.name.toLowerCase().includes(search.toLocaleLowerCase())
             ).map((data3)=>{
-                 return (<div className='col-12 col-md-6 col-lg-3'><Card foodname={data3.name} image={data3.img} price={data3.price}/></div>)
+                 return (<div className='col-12 col-md-6 col-lg-3'><Card data3={data3}/></div>)
             }):<div>nothing</div>}
          
          </div>

@@ -3,10 +3,12 @@ import './App.css';
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom"
 import Signup from './screens/signup';
 import Login from './screens/login';
+import Cartprovider from './components/ContexReducer';
 
 function App() {
   return (
    <>
+   <Cartprovider>
    <Router>
     <Routes>
       <Route exact path='/' element={<Home/>}/>
@@ -18,6 +20,7 @@ function App() {
       </Route>
     </Routes>
    </Router>
+   </Cartprovider>
    </>
   );
 }

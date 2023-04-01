@@ -17,7 +17,7 @@ const mongodb=async()=>{
             
            })
 
-        //   console.log(global.data);
+         console.log(global.data);
         });
         data2.find({}).toArray((err,res1)=>{
             // console.log(res1);
@@ -27,3 +27,4 @@ const mongodb=async()=>{
     })}
 // mongo()
 module.exports=mongodb
+ 

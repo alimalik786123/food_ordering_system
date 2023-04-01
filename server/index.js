@@ -1,6 +1,6 @@
 const express = require('express');
 const mongo = require('./database/db');
-mongo()
+mongo() 
 const router=require("./Routes/createuser")
 const display=require("./Routes/display")
 var bodyParser = require('body-parser')

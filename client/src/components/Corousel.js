@@ -11,6 +11,7 @@ const Corousel=()=>{
         </div>
       <div class="carousel-item active">
         <img src="https://source.unsplash.com/random/900x700?noodles" class="d-block h-100 w-100" alt="..."/>
+        
       </div>
       <div class="carousel-item">
         <img src="https://source.unsplash.com/random/900x700?biryani" class="d-block h-100 w-100" alt="..."/>
