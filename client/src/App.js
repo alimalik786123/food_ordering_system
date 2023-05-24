@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom"
 import Signup from './screens/signup';
 import Login from './screens/login';
 import Cartprovider from './components/ContexReducer';
+import Reduce from './components/Reduce';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route  path='/signup' element={<Signup/>}/>
-      <Route  path='/login' element={<Login/>}>
+      <Route  path='/login' element={<Login/>}/>
+      <Route  path='/reduce' element={<Reduce/>}>
+
 
 
 

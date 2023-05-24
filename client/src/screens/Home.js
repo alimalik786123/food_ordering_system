@@ -13,14 +13,16 @@ const Home=()=>{
             headers:{
                 'Content-Type':'application/json'
             }
-        })
+        }) 
         data=await data.json()
         // console.log()
-        setfood(data[0])
+        setfood(data[0]) 
         setcat(data[1])
+        
 
-    }
-
+    } 
+    console.log(food);
+    console.log(cat);
      useEffect(()=>{
         datafood()
      },[])

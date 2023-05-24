@@ -20,7 +20,7 @@ export default function Login() {
         console.log(resp);
         if(resp.success){
           window.localStorage.setItem("token",resp.token)
-          console.log(window.localStorage.getItem("token"));
+          console.log(window.localStorage.getItem("token")); 
            redirect1("/")
         }
         else if(!resp.success){
