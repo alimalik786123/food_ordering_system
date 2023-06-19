@@ -8,7 +8,7 @@ import Reduce from './components/Reduce';
 
 function App() {
   return (
-   <>
+   <> 
    <Cartprovider>
    <Router>
     <Routes>
